@@ -1,5 +1,6 @@
 import pygame
 from constants import *
+from player import Player
 
 # Initialize Pygame
 pygame.init()
@@ -21,10 +22,20 @@ while running:
     
     # Fill the screen with black
     screen.fill(BLACK)
+
+    #Initialize the player
+    player = Player(x=SCREEN_WIDTH/2, y=SCREEN_HEIGHT/2)
+
+    # Redraw the player every frame
+    player.draw(screen)
+
+    # Update the display
     pygame.display.flip()
     
     # Update delta time
     dt = clock.tick(60) / 1000.0
+
+    
 
 pygame.quit()
 
