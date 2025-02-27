@@ -13,6 +13,9 @@ BLACK = (0, 0, 0)
 clock = pygame.time.Clock()
 dt = 0
 
+#Initialize the player
+player = Player(x=SCREEN_WIDTH/2, y=SCREEN_HEIGHT/2)
+
 # Main game loop
 running = True
 while running:
@@ -23,10 +26,10 @@ while running:
     # Fill the screen with black
     screen.fill(BLACK)
 
-    #Initialize the player
-    player = Player(x=SCREEN_WIDTH/2, y=SCREEN_HEIGHT/2)
+    # Update the player
+    player.update(dt)
 
-    # Redraw the player every frame
+    # Render the player every frame
     player.draw(screen)
 
     # Update the display
