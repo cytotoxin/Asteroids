@@ -44,6 +44,13 @@ while running:
     # Update the updateables
     updatables.update(dt)
 
+    # Check for collisions
+    for obj in asteroids:
+        if player.collides_with(obj):
+            print("Game Over!")
+            running = False
+            break
+        
     # Draw the drawables
     for drawable in drawables:
         drawable.draw(screen)
